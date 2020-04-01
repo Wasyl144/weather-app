@@ -1,5 +1,6 @@
 import { Component, OnInit , Input} from '@angular/core';
 import { FormControl, FormGroup,Validators} from '@angular/forms';
+import {CommentService} from '../comment.service';
 
 @Component({
   selector: 'app-comments-form',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup,Validators} from '@angular/forms';
 
 export class CommentsFormComponent implements OnInit {
   
-  constructor() { }
+  constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
   }
@@ -32,7 +33,11 @@ export class CommentsFormComponent implements OnInit {
   
 
   onSubmit () {
-    console.log("it works");
+    this.commentService.setData ({
+      name: this.commentForm.value.name,
+      mail: this.commentForm.value.mail,
+      description: this.commentForm.value.description,
+    })
   }
   onSubmit2() {
     // TODO: Use EventEmitter with form value
