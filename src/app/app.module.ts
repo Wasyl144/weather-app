@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MaterialModule} from './material/material.module';
 import { RouterModule, Routes } from '@angular/router';
+import {FormsModule} from "@angular/forms";
+import {ReactiveFormsModule,FormGroupDirective} from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CommentsComponent } from './about/comments/comments.component';
+import { CommentsFormComponent } from './about/comments-form/comments-form.component';
 
 
 const appRoutes: Routes = [
@@ -36,6 +40,8 @@ const appRoutes: Routes = [
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
+    CommentsComponent,
+    CommentsFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,8 +57,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
     ),
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
-  providers: [],
+  providers: [FormGroupDirective,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
