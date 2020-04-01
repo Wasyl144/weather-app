@@ -25,7 +25,8 @@ export class CommentsFormComponent implements OnInit {
     ]),
     description: new FormControl('',[
       Validators.minLength(3),
-      Validators.maxLength(150)
+      Validators.maxLength(150),
+      Validators.required,
     ]),
   });
   
@@ -35,7 +36,7 @@ export class CommentsFormComponent implements OnInit {
   }
   onSubmit2() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.commentForm.value.description);
+    console.warn(this.commentForm.value);
   }
 
   
