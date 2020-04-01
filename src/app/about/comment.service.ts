@@ -15,10 +15,6 @@ export class CommentService {
 
   constructor() { }
 
-  nextMessage(data: any) {
-    this.dataSource.next(data)
-  }
-
   setData(data: any) {
     this.dataSource.next(data);
   }

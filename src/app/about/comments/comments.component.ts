@@ -15,6 +15,7 @@ export class CommentsComponent implements OnInit {
     this.commentService.getData().subscribe(info => {
       this.UserInfo=info;
     })
+
   }
 
 }
