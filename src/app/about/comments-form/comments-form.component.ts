@@ -42,6 +42,7 @@ export class CommentsFormComponent implements OnInit {
   onSubmit2() {
     // TODO: Use EventEmitter with form value
     console.warn(this.commentForm.value);
+    console.log(this.commentForm.value.description);
   }
 
   
