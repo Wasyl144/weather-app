@@ -1,5 +1,7 @@
 <h2>Comments</h2>
 
-<h3>{{UserInfo.name}}</h3>
-
-
+<ul *ngFor="let user of Users">
+    <li *ngIf="user.name!=''">
+        {{ user.name }}
+    </li>
+</ul>
