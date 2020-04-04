@@ -1,1 +1,12 @@
-<p>home works!</p>
+<button (click)="check()">Click me </button>
+
+
+<form [formGroup]="cityForm" (ngSubmit)="onSubmit()" class="form" >
+
+    <mat-form-field class="field">
+        <input type="text" matInput formControlName="city" placeholder="Type your city">
+    </mat-form-field>
+
+    <button type="submit" [disabled]="!cityForm.valid" class="btn" mat-button > Submit </button>
+
+</form>

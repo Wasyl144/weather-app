@@ -4,6 +4,7 @@ import {MaterialModule} from './material/material.module';
 import { RouterModule, Routes } from '@angular/router';
 import {FormsModule} from "@angular/forms";
 import {ReactiveFormsModule,FormGroupDirective} from "@angular/forms";
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +60,7 @@ const appRoutes: Routes = [
     ),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     
   ],
   providers: [FormGroupDirective,],
