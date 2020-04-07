@@ -38,6 +38,7 @@ export class CommentsFormComponent implements OnInit {
       mail: this.commentForm.value.mail,
       description: this.commentForm.value.description,
     })
+    this.commentService.setTrue();
   }
   onSubmit2() {
     // TODO: Use EventEmitter with form value

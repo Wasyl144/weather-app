@@ -11,7 +11,10 @@ export class CommentService {
     mail: '',
     description: '',
   });
+
   currentMessage = this.dataSource.asObservable();
+
+  setList=false;
 
   constructor() { }
 
@@ -21,5 +24,12 @@ export class CommentService {
 
   getData() {
     return this.dataSource.asObservable();
+  }
+
+  getList(){
+    return this.setList;
+  }
+  setTrue(){
+    this.setList=true;
   }
 }

@@ -30,8 +30,8 @@ export class HomeComponent implements OnInit {
 
    onSubmit () {
     this.weatherService.changeCity (this.cityForm.value.city);
-    this.weatherService.getWeather().subscribe((res:WeatherModel[])=> {
-      this.weatherData=res;
+    this.weatherService.getWeather().subscribe((data:WeatherModel[])=> {
+      this.weatherData=data;
     })
   }
 

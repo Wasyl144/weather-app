@@ -9,7 +9,7 @@ import {Comment} from '../comment';
 })
 export class CommentsComponent implements OnInit {
   UserInfo:any;
-  Users = []
+  Users = [];
   
 
   constructor(private commentService:CommentService) {
@@ -24,6 +24,12 @@ export class CommentsComponent implements OnInit {
     
   }
 
+  updater() {
+    if(this.commentService.getList()==true){
+      return true;
+    }
+    return false;
+  }
   
   
 }

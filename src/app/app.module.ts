@@ -22,6 +22,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CommentsComponent } from './about/comments/comments.component';
 import { CommentsFormComponent } from './about/comments-form/comments-form.component';
+import { WeatherDisplayComponent } from './home/weather-display/weather-display.component';
 
 
 const appRoutes: Routes = [
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     CommentsComponent,
     CommentsFormComponent,
+    WeatherDisplayComponent,
   ],
   imports: [
     BrowserModule,

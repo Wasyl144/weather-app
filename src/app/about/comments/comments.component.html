@@ -1,13 +1,13 @@
 <h2>Comments</h2>
 
 
-
-<ul *ngFor="let user of Users">
-    <li *ngIf="user.name!=''">
-        <h1>{{ user.name }}</h1>
-        {{ user.mail }}
-        <h2>{{ user.description }}</h2>
-    </li>
-</ul>
-
-<!-- <ng-template #guest><div>Brak komentarzy</div></ng-template> ; else guest -->
+<div class="list">
+    <ul *ngFor="let user of Users">
+        <li *ngIf="user.name!=''&& updater()">
+            <h1>{{ user.name }}</h1>
+            {{ user.mail }}
+            <h2>{{ user.description }}</h2>
+        </li>
+    </ul>
+</div>
+<div *ngIf="!updater()">Brak komentarzy</div>
