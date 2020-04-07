@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup,Validators} from '@angular/forms';
 import {CommentService} from '../comment.service';
 import {Comment} from '../comment';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-comments-form',
@@ -11,7 +12,7 @@ import {Comment} from '../comment';
 
 export class CommentsFormComponent implements OnInit {
   
-  constructor(private commentService: CommentService) { }
+  constructor(private commentService: CommentService, private matBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -43,9 +44,12 @@ export class CommentsFormComponent implements OnInit {
 
     this.commentService.setData (this.data);
     this.commentService.setTrue();
+    this.matBar.open("Comment be added :)","Dismiss", {
+      duration:2000,
+    });
   }
   onSubmit2() {
-    // TODO: Use EventEmitter with form value
+    // Debug
     console.warn(this.commentForm.value);
     console.log(this.commentForm.value.description);
   }

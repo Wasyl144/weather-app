@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentService } from '../comment.service';
 import { Comment } from '../comment';
-import { Observable } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -39,7 +38,5 @@ export class CommentsComponent implements OnInit {
   }
 
   displayedColumns: string[] = ['name', 'mail', 'description']
-  // dataSource = this.Users;
-
 
 }
