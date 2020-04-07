@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {CommentService} from '../comment.service';
-import {Comment} from '../comment';
+import { CommentService } from '../comment.service';
+import { Comment } from '../comment';
+import { Observable } from 'rxjs';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-comments',
@@ -8,30 +10,36 @@ import {Comment} from '../comment';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-  UserInfo:Comment;
-  Users:Comment[]=[];
-  
+  UserInfo: Comment;
+  Users: Comment[] = [];
+  dataSource = new MatTableDataSource<Comment>();
 
-  constructor(private commentService:CommentService) {
-    
-   }
+
+  constructor(private commentService: CommentService) {
+
+  }
 
   ngOnInit(): void {
     this.commentService.getData().subscribe(info => {
-      this.UserInfo=info;
-      console.log(this.UserInfo);
-      this.Users.push(this.UserInfo);
-      
+      if (info.name != '') {
+        this.UserInfo = info;
+        console.log(this.UserInfo);
+        this.Users.push(this.UserInfo);
+        this.dataSource.data = this.Users;
+      }
     })
-    
+
   }
 
   updater() {
-    if(this.commentService.getList()==true){
+    if (this.commentService.getList() == true) {
       return true;
     }
     return false;
   }
-  
-  
+
+  displayedColumns: string[] = ['name', 'mail', 'description']
+  // dataSource = this.Users;
+
+
 }
