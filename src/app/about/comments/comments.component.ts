@@ -8,8 +8,8 @@ import {Comment} from '../comment';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-  UserInfo:any;
-  Users = [];
+  UserInfo:Comment;
+  Users:Comment[]=[];
   
 
   constructor(private commentService:CommentService) {
@@ -19,7 +19,9 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {
     this.commentService.getData().subscribe(info => {
       this.UserInfo=info;
-      this.Users.push(new Comment (this.UserInfo.name,this.UserInfo.mail,this.UserInfo.description));
+      console.log(this.UserInfo);
+      this.Users.push(this.UserInfo);
+      
     })
     
   }

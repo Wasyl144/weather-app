@@ -1,6 +1,5 @@
-export class Comment {
-    constructor(
-      public name: string,
-      public mail: string,
-      public description: string) { }
+export interface Comment {
+      name: string,
+      mail: string,
+      description: string,
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormControl, FormGroup,Validators} from '@angular/forms';
 import {CommentService} from '../comment.service';
+import {Comment} from '../comment';
 
 @Component({
   selector: 'app-comments-form',
@@ -30,14 +31,17 @@ export class CommentsFormComponent implements OnInit {
       Validators.required,
     ]),
   });
+  data: Comment;
   
 
   onSubmit () {
-    this.commentService.setData ({
-      name: this.commentForm.value.name,
-      mail: this.commentForm.value.mail,
-      description: this.commentForm.value.description,
-    })
+    this.data={
+      name:this.commentForm.value.name,
+      mail:this.commentForm.value.mail,
+      description:this.commentForm.value.description,
+    }
+
+    this.commentService.setData (this.data);
     this.commentService.setTrue();
   }
   onSubmit2() {

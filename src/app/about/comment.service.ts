@@ -1,16 +1,13 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
+import {Comment} from './comment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommentService {
 
-  private dataSource = new BehaviorSubject ({
-    name: '',
-    mail: '',
-    description: '',
-  });
+  private dataSource = new BehaviorSubject<Comment>({name:'',mail:'',description:''});
 
   currentMessage = this.dataSource.asObservable();
 
@@ -18,7 +15,7 @@ export class CommentService {
 
   constructor() { }
 
-  setData(data: any) {
+  setData(data: Comment) {
     this.dataSource.next(data);
   }
 
