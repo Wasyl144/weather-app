@@ -36,17 +36,23 @@ export class CommentsFormComponent implements OnInit {
   
 
   onSubmit () {
-    this.data={
-      name:this.commentForm.value.name,
-      mail:this.commentForm.value.mail,
-      description:this.commentForm.value.description,
+    if(this.commentForm.valid){
+      this.data={
+        name:this.commentForm.value.name,
+        mail:this.commentForm.value.mail,
+        description:this.commentForm.value.description,
+      }
+  
+      this.commentService.setData (this.data);
+      this.commentService.setTrue();
+      this.matBar.open("Comment be added :)","Dismiss", {
+        duration:2000,
+      });
+      return;
     }
-
-    this.commentService.setData (this.data);
-    this.commentService.setTrue();
-    this.matBar.open("Comment be added :)","Dismiss", {
+    this.matBar.open("Check the form","Dismiss", {
       duration:2000,
-    });
+    }); 
   }
   onSubmit2() {
     // Debug

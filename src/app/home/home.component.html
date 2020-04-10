@@ -1,13 +1,17 @@
-<button (click)="check()">Click me - drop data to console </button>
+<div class = "wrapper"> 
+    <div class="form_all">
+        <button (click)="check()">Click me - drop data to console </button>
 
 
-<form [formGroup]="cityForm" (ngSubmit)="onSubmit()" class="form" >
-    <mat-form-field class="field">
-        <input type="text" matInput formControlName="city" placeholder="Type your city">
-    </mat-form-field>
+        <form [formGroup]="cityForm" (ngSubmit)="onSubmit()" class="form">
+            <mat-form-field class="field">
+                <input type="text" matInput formControlName="city" placeholder="Type your city">
+            </mat-form-field>
 
-    <button type="submit" [disabled]="!cityForm.valid" class="btn" mat-button > Submit </button>
-</form>
-<div class="weather">
-    <app-weather-display></app-weather-display>
+            <button type="submit" [disabled]="!cityForm.valid" class="btn" mat-button> Submit </button>
+        </form>
+    </div>
+    <div class="weather">
+        <app-weather-display></app-weather-display>
+    </div>
 </div>
