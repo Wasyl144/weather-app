@@ -25,3 +25,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## How to use a program
+
+Firstable you need a JBryl's API. You can fork from there: [JBryl's Backend](https://github.com/jbryl7/weather-app).
+
+After this you need a .env file which contains a API key and API Calls, I've use a [OpenWeather API](https://openweathermap.org/api).
+
+## ENJOY :)
