@@ -30,6 +30,7 @@ export class CommentsComponent implements OnInit {
 
   }
 
+  //this function update a comment list
   updater() {
     if (this.commentService.getList() == true) {
       return true;

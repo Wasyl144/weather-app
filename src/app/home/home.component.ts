@@ -35,9 +35,18 @@ export class HomeComponent implements OnInit {
       this.weatherData=data;
     })
     
-    this.show=true;
+    this.showFunc();
   }
-  show=false;
+  show=false; //show var otherComponent
+  showBar=false; //show var ProgressBar
+
+  showFunc() { //This function makes lazy-loading
+    this.showBar=true;
+    setTimeout(()=>{
+      this.showBar=false;
+      this.show=true;
+    },1000)
+  }
 
   ngOnInit(): void {
     

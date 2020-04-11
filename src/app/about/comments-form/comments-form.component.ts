@@ -16,7 +16,7 @@ export class CommentsFormComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //Form validators
   commentForm = new FormGroup({
     name: new FormControl('',[
       Validators.required,
@@ -34,7 +34,7 @@ export class CommentsFormComponent implements OnInit {
   });
   data: Comment;
   
-
+  //This function assign and pass data to service to the other component
   onSubmit () {
     if(this.commentForm.valid){
       this.data={

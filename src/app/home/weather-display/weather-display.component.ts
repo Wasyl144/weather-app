@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {WeatherService} from '../weather.service';
-import {WeatherModel} from '../weather.model';
+import { WeatherService } from '../weather.service';
+import { WeatherModel } from '../weather.model';
 import { Observable } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
 
@@ -11,28 +11,27 @@ import { HttpResponse } from '@angular/common/http';
 })
 export class WeatherDisplayComponent implements OnInit {
 
-  weatherData:WeatherModel = {
+  weatherData: WeatherModel = {
     city_name: '',
     description: {
-        conditions:'',
+      conditions: '',
     },
-    pressure:0,
-    temperature:0,
-    wind_speed:0,
+    pressure: 0,
+    temperature: 0,
+    wind_speed: 0,
   };
 
-  constructor(private weatherService:WeatherService) { 
-    
+  constructor(private weatherService: WeatherService) {
+
   }
-  interval:any;
+  interval: any;
   ngOnInit() {
     this.getData();
-    
-}
+  }
 
-  getData (){
-    
-    this.weatherService.retWea().subscribe((data:WeatherModel)=>this.weatherData=data);
+  getData() {
+
+    this.weatherService.retWea().subscribe((data: WeatherModel) => this.weatherData = data);
   }
 
 

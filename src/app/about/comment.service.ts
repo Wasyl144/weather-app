@@ -26,6 +26,7 @@ export class CommentService {
   getList(){
     return this.setList;
   }
+  //this function calls comment table in other component
   setTrue(){
     this.setList=true;
   }

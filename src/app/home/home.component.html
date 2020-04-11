@@ -11,6 +11,7 @@
             <button type="submit" [disabled]="!cityForm.valid" class="btn" mat-button> Submit </button>
         </form>
     </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="showBar"></mat-progress-bar>
     <div class="weather" *ngIf="show">
         <app-weather-display></app-weather-display>
     </div>

@@ -28,11 +28,12 @@ export class WeatherService {
     this.currentCity.next(city);
     this.city1=this.currentCity.getValue();
   }
-
+  //This function assign variable dataSource as a BehaviourSubject to pass data
   getwee(){
     this.getWeather().subscribe((data:WeatherModel) => this.dataSource.next(data));
   }
 
+  //This functio returns beahavioursubject to other compontnet
   retWea() {
     
     return this.dataSource.asObservable();
