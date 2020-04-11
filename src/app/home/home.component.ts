@@ -11,7 +11,7 @@ import { FormGroup,FormControl,Validators} from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  private weatherData:WeatherModel[] = [];
+  private weatherData:WeatherModel;
 
   cityForm = new FormGroup({
     city: new FormControl('',[
@@ -30,10 +30,14 @@ export class HomeComponent implements OnInit {
 
    onSubmit () {
     this.weatherService.changeCity (this.cityForm.value.city);
-    this.weatherService.getWeather().subscribe((data:WeatherModel[])=> {
+    this.weatherService.getWeather().subscribe((data:WeatherModel)=> {
+      this.weatherService.getwee();
       this.weatherData=data;
     })
+    
+    this.show=true;
   }
+  show=false;
 
   ngOnInit(): void {
     
