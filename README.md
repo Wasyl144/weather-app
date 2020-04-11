@@ -33,4 +33,6 @@ Firstable you need a JBryl's API. You can fork from there: [JBryl's Backend](htt
 
 After this you need a .env file which contains a API key and API Calls, I've use a [OpenWeather API](https://openweathermap.org/api).
 
+## Thanks to JBryl good API
+
 ## ENJOY :)
