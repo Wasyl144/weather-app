@@ -1,0 +1,19 @@
+<h1>Your opinion is very inportant</h1>
+
+
+<form [formGroup]="commentForm" class="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="field">
+        <input type="text" matInput formControlName="name" placeholder="Name">
+    </mat-form-field>
+    <mat-form-field class="field">
+        <input type="email" matInput formControlName="mail" placeholder="E-mail">
+    </mat-form-field>
+    <mat-form-field class="field">
+        <mat-label>Textarea</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+    </mat-form-field>
+
+    <button type="submit" class="btn" mat-button > Submit </button>
+
+</form>

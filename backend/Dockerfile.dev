@@ -1,0 +1,10 @@
+FROM python:alpine
+
+WORKDIR '/app'
+
+COPY ./requirements.txt ./requirements.txt
+RUN python -m pip install flask flask-restful requests flask_cors
+
+COPY . .
+
+CMD ["python", "api.py"]

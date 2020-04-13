@@ -1,0 +1,26 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.field {
+    margin: auto;
+    position: relative;
+    width: 30vw;
+    min-width: 250px;
+    min-height: 50px;
+    height: 8vh;
+    input {
+        width: 130%;
+    }
+}
+.btn {
+    margin: auto;
+    margin-top: 20px;
+}
+
+h1{
+    text-align: center;
+    
+}
