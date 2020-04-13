@@ -3,6 +3,9 @@ export interface WeatherModel {
     description: {
         conditions:string,
     },
+    icon: {
+        type:string,
+    },
     pressure:number,
     temperature:number,
     wind_speed:number,

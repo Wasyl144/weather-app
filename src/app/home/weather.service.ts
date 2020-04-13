@@ -16,6 +16,9 @@ export class WeatherService {
     description: {
         conditions:'',
     },
+    icon: {
+      type:'',
+    },
     pressure:0,
     temperature:0,
     wind_speed:0,
