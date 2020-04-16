@@ -29,15 +29,24 @@ class Weather(Resource):
         url = API_URL+city+"&appid="+API_KEY
         logging.info(f"requested weather in {city}")
         r = requests.get(url).json()
-        resp = {
-            "temperature": int(r["main"]["temp"]) - 273,
-            "description": [r["weather"][i]["description"] for i in range(len(r["weather"]))],
-            "icon": [r["weather"][i]["icon"] for i in range(len(r["weather"]))],
-            "wind_speed": r["wind"]["speed"],
-            "city_name": r["name"],
-            "pressure": r["main"]["pressure"]
-            }
-        return make_response(resp, 200)
+        temp = r["cod"]
+        logging.info(temp)
+        if temp==200:
+            resp = {
+                "temperature": int(r["main"]["temp"]) - 273,
+                "description": [r["weather"][i]["description"] for i in range(len(r["weather"]))],
+                "icon": [r["weather"][i]["icon"] for i in range(len(r["weather"]))],
+                "wind_speed": r["wind"]["speed"],
+                "city_name": r["name"],
+                "pressure": r["main"]["pressure"],
+                "cod": temp
+                }
+            return make_response(resp, 200)
+        else:
+            lol = {
+                "cod": temp
+                }
+            return jsonify(lol)
 
 
 api.add_resource(Weather, '/weather/<string:city>')

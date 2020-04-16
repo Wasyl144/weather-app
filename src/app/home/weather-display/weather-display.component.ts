@@ -22,8 +22,8 @@ export class WeatherDisplayComponent implements OnInit {
     pressure: 0,
     temperature: 0,
     wind_speed: 0,
+    cod:0,
   };
-
   constructor(private weatherService: WeatherService) {
 
   }
@@ -34,9 +34,8 @@ export class WeatherDisplayComponent implements OnInit {
 
   getData() {
 
-    this.weatherService.retWea().subscribe((data: WeatherModel) => this.weatherData = data);
+    this.weatherService.retWea().subscribe((data: WeatherModel) => this.weatherData = data)
   }
-
 
 
 }

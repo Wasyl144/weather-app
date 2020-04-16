@@ -22,6 +22,7 @@ export class WeatherService {
     pressure:0,
     temperature:0,
     wind_speed:0,
+    cod:0,
   });
   currentMessage = this.dataSource.asObservable();
 
