@@ -16,20 +16,6 @@ mat-card-content {
     }
 }
 
-// @keyframes fadeInRight {
-//     from {
-//         opacity: 0;
-//         -webkit-transform: translate3d(100%, 0, 0);
-//         transform: translate3d(100%, 0, 0);
-//     }
-
-//     to {
-//         opacity: 1;
-//         -webkit-transform: translate3d(0, 0, 0);
-//         transform: translate3d(0, 0, 0);
-//     }
-// }
-
 @keyframes appear {
     0% {
         opacity: 0;
@@ -43,11 +29,18 @@ mat-card-content {
 
 .error__wrapper {
     display: flex;
+    position: relative;
+    margin: auto;
     flex-direction: column;
     align-items: center;
     color:red;
     text-align: center;
     animation: appear .5s ease;
+}
+.card_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -57,6 +50,7 @@ mat-card-content {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    position: relative;
 }
 .card__wrapper {
     min-width: 320px;
@@ -68,6 +62,8 @@ mat-card-content {
     
 }
 .list__wrapper {
+    position: relative;
+    height: 100%;
     min-width: 320px;
     min-height: 320px;
     margin-right: 20px;
