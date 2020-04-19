@@ -1,26 +1,33 @@
-.form {
+.card__wrapper{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    padding: 20px;
+    align-items: center;   
 }
 
-.field {
-    margin: auto;
-    position: relative;
-    width: 30vw;
-    min-width: 250px;
-    min-height: 50px;
-    height: 8vh;
-    input {
-        width: 130%;
-    }
-}
-.btn {
-    margin: auto;
-    margin-top: 20px;
-}
 
-h1{
-    text-align: center;
+.card__card{
+    display:flex;
+    flex-direction: column;
+    min-width: 300px;
+    min-height: 400px;
+    height: 70%;
+    width: 70%;
     
+
+}
+
+.card__form{
+    justify-self: center;
+    margin:auto;
+    width: 30vw;
+    
+}
+
+.form2{
+    display: flex;
+    flex-direction: column;
+}
+.card_button {
+    align-self: center;
 }
