@@ -1,19 +1,30 @@
-<h1>Your opinion is very inportant</h1>
-
-
-<form [formGroup]="commentForm" class="form" (ngSubmit)="onSubmit()">
-
-    <mat-form-field class="field">
-        <input type="text" matInput formControlName="name" placeholder="Name">
-    </mat-form-field>
-    <mat-form-field class="field">
-        <input type="email" matInput formControlName="mail" placeholder="E-mail">
-    </mat-form-field>
-    <mat-form-field class="field">
-        <mat-label>Textarea</mat-label>
-        <textarea formControlName="description" matInput></textarea>
-    </mat-form-field>
-
-    <button type="submit" class="btn" mat-button > Submit </button>
-
-</form>
+<div class="card__wrapper">
+    <mat-card class="card__card">
+        <mat-card-title class="card__title">Leave a comment</mat-card-title>
+        <mat-card-subtitle class="card__subtitle">Make this site better</mat-card-subtitle>
+        <mat-card-content class="card__form">
+            <form [formGroup]="commentForm">
+                <div class="form2">
+                    <mat-form-field class="field1">
+                        <input type="text" matInput formControlName="name" placeholder="Name">
+                        <mat-hint>Put your name :)</mat-hint>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="field2">
+                        <input type="email" matInput formControlName="mail" placeholder="E-mail">
+                        <mat-hint>Ex. example@lorem.com</mat-hint>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="field3">
+                        <mat-label>Textarea</mat-label>
+                        <textarea formControlName="description" matInput></textarea>
+                        <mat-hint>Type a comment </mat-hint>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions class="card_button">
+            <button mat-raised-button color="primary" class="btn" (click)="onSubmit()"> Submit </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

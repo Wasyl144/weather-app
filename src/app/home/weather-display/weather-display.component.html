@@ -1,5 +1,5 @@
-<mat-grid-list cols="4" >
-    <mat-grid-tile [colspan]=1>
+<div class="display__wrapper" *ngIf="weatherData.cod==200; else errorMessage">
+    <div class="card__wrapper">
         <mat-card class="card">
             <mat-card-header>
                 <mat-card-title>{{weatherData.city_name}}</mat-card-title>
@@ -17,20 +17,26 @@
                 </p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>LIKE</button>
+                <button (click)="likeFun()" mat-button>LIKE</button>
             </mat-card-actions>
         </mat-card>
-
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]=3>
-
-        <mat-list>
+    </div>
+    <div class="list__wrapper">
+        <mat-card class="list">
             <h2>More info</h2>
             <mat-list-item>Pressure: {{weatherData.pressure}} hPa </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>Wind speed: {{weatherData.wind_speed}} m/s </mat-list-item>
             <mat-divider></mat-divider>
             <mat-list-item>Temperature: {{weatherData.temperature}} </mat-list-item>
-        </mat-list>
-    </mat-grid-tile>
-</mat-grid-list>
+        </mat-card>
+    </div>
+</div>
+
+<ng-template #errorMessage>
+    <div class="error__wrapper" >
+        <mat-card class="card_1">
+            <h1>Sorry server is propably down or you put a wrong City name :D</h1>
+        </mat-card>
+    </div>
+</ng-template>

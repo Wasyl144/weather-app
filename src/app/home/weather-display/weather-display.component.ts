@@ -3,6 +3,8 @@ import { WeatherService } from '../weather.service';
 import { WeatherModel } from '../weather.model';
 import { Observable } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-weather-display',
@@ -22,9 +24,10 @@ export class WeatherDisplayComponent implements OnInit {
     pressure: 0,
     temperature: 0,
     wind_speed: 0,
+    cod:0,
   };
-
-  constructor(private weatherService: WeatherService) {
+  constructor(private weatherService: WeatherService,
+    private _snackBar: MatSnackBar) {
 
   }
   interval: any;
@@ -34,9 +37,13 @@ export class WeatherDisplayComponent implements OnInit {
 
   getData() {
 
-    this.weatherService.retWea().subscribe((data: WeatherModel) => this.weatherData = data);
+    this.weatherService.retWea().subscribe((data: WeatherModel) => this.weatherData = data)
   }
 
-
+  likeFun() {
+    this._snackBar.open('Thanks :)', 'Dismiss', {
+      duration: 3000
+    });
+  }
 
 }

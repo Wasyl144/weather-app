@@ -9,4 +9,5 @@ export interface WeatherModel {
     pressure:number,
     temperature:number,
     wind_speed:number,
+    cod:number,
 }
