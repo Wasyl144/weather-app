@@ -21,9 +21,7 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {
     this.commentService.getData().subscribe(info => {
       if (info.name != '') {
-        this.UserInfo = info;
-        console.log(this.UserInfo);
-        this.Users.push(this.UserInfo);
+        this.Users.push(info);
         this.dataSource.data = this.Users;
       }
     })
